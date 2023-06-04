@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     # External packages
     "rest_framework",
     # Internal apps
+    "ekommerz.product",
 ]
 
 MIDDLEWARE = [
