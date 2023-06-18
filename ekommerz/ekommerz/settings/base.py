@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     # External packages
     "rest_framework",
     "drf_spectacular",
+    "mptt",
     # Internal apps
     "ekommerz.product",
 ]
