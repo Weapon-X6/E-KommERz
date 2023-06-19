@@ -5,7 +5,7 @@ pytestmark = pytest.mark.django_db
 
 
 class TestCategoryEndpoints:
-    endpoint = "/api/category/"
+    endpoint = "/api/categories/"
 
     def test_category_get(self, category_factory, api_client):
         category_factory.create_batch(4)
@@ -17,7 +17,7 @@ class TestCategoryEndpoints:
 
 
 class TestBrandEndpoints:
-    endpoint = "/api/brand/"
+    endpoint = "/api/brands/"
 
     def test_brand_get(self, brand_factory, api_client):
         brand_factory.create_batch(4)
@@ -29,7 +29,7 @@ class TestBrandEndpoints:
 
 
 class TestProductEndpoints:
-    endpoint = "/api/product/"
+    endpoint = "/api/products/"
 
     def test_product_get(self, product_factory, api_client):
         product_factory.create_batch(4)

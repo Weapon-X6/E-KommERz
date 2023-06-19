@@ -9,9 +9,9 @@ from rest_framework.routers import DefaultRouter
 from ekommerz.product import views
 
 router = DefaultRouter()
-router.register(r"category", views.CategoryViewSet)
-router.register(r"brand", views.BrandViewSet)
-router.register(r"product", views.ProductViewSet)
+router.register(r"categories", views.CategoryViewSet)
+router.register(r"brands", views.BrandViewSet)
+router.register(r"products", views.ProductViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
