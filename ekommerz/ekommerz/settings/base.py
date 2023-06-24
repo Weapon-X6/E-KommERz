@@ -109,4 +109,8 @@ REST_FRAMEWORK = {
 
 SPECTACULAR_SETTINGS = {
     "Title": "Django DRF E-kommERz",
+    "DESCRIPTION": "Building the FutuR",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "SCHEMA_PATH_PREFIX": r"/api",
 }
