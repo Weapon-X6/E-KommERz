@@ -41,3 +41,6 @@ class ProductLine(models.Model):
     stock_qty = models.IntegerField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.product.name} / {self.sku}"
