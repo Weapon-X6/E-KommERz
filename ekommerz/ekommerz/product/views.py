@@ -37,7 +37,9 @@ class ProductViewSet(viewsets.GenericViewSet):
     lookup_field = "slug"
 
     def retrieve(self, request, slug=None):
-        queryset = self.get_queryset().filter(slug=slug)
+        queryset = (
+            self.get_queryset().filter(slug=slug).select_related("category", "brand")
+        )
         serializer = ProductSerializer(queryset, many=True)
         return Response(serializer.data)
 
