@@ -10,7 +10,7 @@ from .serializers import BrandSerializer, CategorySerializer, ProductSerializer
 class CategoryViewSet(viewsets.ViewSet):
     """A simple ViewSet for viewing all categories."""
 
-    queryset = Category.objects.all()
+    queryset = Category.objects.all().isactive()
 
     @extend_schema(responses=CategorySerializer)
     def list(self, request):
@@ -21,7 +21,7 @@ class CategoryViewSet(viewsets.ViewSet):
 class BrandViewSet(viewsets.ViewSet):
     """A simple ViewSet for viewing all brands."""
 
-    queryset = Brand.objects.all()
+    queryset = Brand.objects.all().isactive()
 
     @extend_schema(responses=BrandSerializer)
     def list(self, request):
@@ -32,7 +32,7 @@ class BrandViewSet(viewsets.ViewSet):
 class ProductViewSet(viewsets.GenericViewSet):
     """A simple ViewSet for viewing all Products."""
 
-    queryset = Product.objects.all()
+    queryset = Product.objects.all().isactive()
     serializer_class = ProductSerializer
     lookup_field = "slug"
 
