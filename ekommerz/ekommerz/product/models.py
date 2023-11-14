@@ -63,8 +63,7 @@ class ProductLine(models.Model):
 
     objects = ActiveQuerySet.as_manager()
 
-    def clean_fields(self, exclude=None):
-        super().clean_fields(exclude=exclude)
+    def clean(self):
         qs = ProductLine.objects.filter(product=self.product)
         for obj in qs:
             if self.id != obj.id and self.order == obj.order:
