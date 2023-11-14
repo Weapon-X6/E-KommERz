@@ -8,6 +8,7 @@ class CategoryFactory(factory.django.DjangoModelFactory):
         model = Category
 
     name = factory.sequence(lambda n: f"Category_{n}")
+    is_active = True
 
 
 class BrandFactory(factory.django.DjangoModelFactory):
@@ -15,6 +16,7 @@ class BrandFactory(factory.django.DjangoModelFactory):
         model = Brand
 
     name = factory.sequence(lambda n: f"Brand_{n}")
+    is_active = True
 
 
 class ProductFactory(factory.django.DjangoModelFactory):

@@ -119,6 +119,8 @@ components:
         name:
           type: string
           maxLength: 100
+        is_active:
+          type: boolean
       required:
       - id
       - name
@@ -174,6 +176,8 @@ components:
           type: string
           maxLength: 100
         stock_qty:
+          type: integer
+        order:
           type: integer
       required:
       - id
