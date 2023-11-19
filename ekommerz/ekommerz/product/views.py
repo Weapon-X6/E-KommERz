@@ -50,10 +50,10 @@ class ProductViewSet(viewsets.GenericViewSet):
     @action(
         methods=["get"],
         detail=False,
-        url_path=r"category/(?P<category>\w+)/all",
+        url_path=r"category/(?P<slug>[\w-]+)",
     )
-    def list_product_by_category(self, request, category=None):
+    def list_product_by_category_slug(self, request, slug):
         """An endpoint to return products by category."""
-        queryset = self.get_queryset().filter(category__name=category)
+        queryset = self.get_queryset().filter(category__slug=slug)
         serializer = ProductSerializer(queryset, many=True)
         return Response(serializer.data)
